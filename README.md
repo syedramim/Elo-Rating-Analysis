@@ -13,3 +13,4 @@
 -pokemon_rating.ipynb is the main file, it utilizes all the methods to rate the pokemosn
 
 ==NOTE, the project is done in the sense that it rates them based solely off stats but I plan to make it much more complex==
+ 
