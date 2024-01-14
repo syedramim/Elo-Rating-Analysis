@@ -1,6 +1,5 @@
 import numpy as np
 import pandas as pd
-import random
 from determine_job import DetermineJob
 
 job_determine = DetermineJob()
@@ -15,24 +14,12 @@ stat_ranges = {
 }
 
 def generate_random_pokemon(amount):
-    pokemon_data = []
-    
-    for _ in range(amount):
-        stats = {stat: np.random.randint(low, high + 1) for stat, (low, high) in stat_ranges.items()}
+    stats_array = np.column_stack([np.random.randint(low, high + 1, size=amount) for _, (low, high) in stat_ranges.items()])
 
-        stats_values = [stats[key] for key in [keys for keys in stats]]
-        jobs = job_determine.get_jobs_primary(stats_values)
+    jobs = [job_determine.get_jobs_primary(stats) for stats in stats_array]
 
-        pokemon = {
-            "HP": stats["HP"],
-            "Attack": stats["Attack"],
-            "Defense": stats["Defense"],
-            "Special-Attack": stats["Special-Attack"],
-            "Special-Defense": stats["Special-Defense"],
-            "Speed": stats["Speed"],
-            "Job": jobs
-        }
-        
-        pokemon_data.append(pokemon)
-        
-    return pd.DataFrame(pokemon_data)
+    pokemon_data = pd.DataFrame(stats_array, columns=stat_ranges.keys())
+    pokemon_data['Job'] = jobs
+
+    return pokemon_data
+
