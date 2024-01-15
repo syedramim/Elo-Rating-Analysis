@@ -1,4 +1,4 @@
-	-This projects aims to provide an accurate way to measure how "good" a pokemon is
+-This projects aims to provide an accurate way to measure how "good" a pokemon is
 	-It uses the pokeapi.co API to get the data and then cleans it through pandas
 	-The project utilizes Numpy alongisde scikit-learn to provide "jobs" for pokemons to create a better rating for them
 	-The project also utilizes the chess algorithm to rate every single pokemon
