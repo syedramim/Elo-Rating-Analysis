@@ -1,5 +1,11 @@
 This projects aims to provide an accurate way to measure how "good" a pokemon is. It uses the pokeapi.co API to get the data and then cleans it through pandas. The project utilizes Numpy alongisde scikit-learn to provide "jobs" for pokemons to create a better rating for them. The project also utilizes the chess algorithm to rate every single pokemon
 
+To Run the Program:
+  -g 
+
+
+THE DESCRIPTION OF EACH FILE IS DOWN BELOW:
+
 -poke_db.xlsx has the parsed json info
 
 -type_advantages.xlsx has the info on type advantages
