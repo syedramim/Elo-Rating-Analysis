@@ -20,6 +20,10 @@ THE DESCRIPTION OF EACH FILE IS DOWN BELOW:
 
 -poke_db.xlsx has the parsed JSON info
 
+-ratings.xlsx contains all the elo ratings of the pokemons, the stats elo is based only on their stats, the primary job is off their primary job and the secondary job elo is off their secondary jobs and finally the ELO is calculated through this formula:
+
+    -ELO = STAT_ELO + 0.5(PRIMARY_JOB_ELO) + 0.5(SECONDARY_JOB_ELO/N) where N is the amount of secondary jobs
+
 -type_advantages.xlsx has the info on type advantages
 
 -determine_job.py determines the best-suited jobs for the Pokemon
