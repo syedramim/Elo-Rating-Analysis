@@ -8,9 +8,8 @@ class EloAlgo():
         stats2 = pokemon_2['stats']
         
         #if speed higher it has higher mlpt because faster otherwise lower mlpt
-        #if advantage mlpt *1.2 and if disadvantage *0.8 and if nuetral *1
+        #if advantage mlpt *1.3 and if disadvantage *(1/1.3) and if nuetral *1
         multiplier = 1.3 if stats1[-1] > stats2[-1] else (1/1.3)
-        print(multiplier)
         multiplier *= self.handle_type_advantages(pokemon_1['type'], pokemon_2['type'], move_adv_df)
 
         elo1 = round(pokemon_1[elo_col] * multiplier)
@@ -23,7 +22,7 @@ class EloAlgo():
         rng_factor_2 = np.random.uniform(0, 0.05, 1000) + np.random.uniform(0.95, 1.05, 1000)
         
         wins = np.sum(np.random.rand(1000)*rng_factor_1 < chance_win_p1*rng_factor_2)
-        print(wins, chance_win_p1)
+        
         return self.update_elo(p_elo1, p_elo2, 1 if wins > 500 else 0)
     
 
@@ -32,7 +31,7 @@ class EloAlgo():
         multipliers = []
         adv_multiplier = 1.3
         
-        #if weak to then 0.8 multiplier and if strong to then 1.2 otherwise base of 1
+        #if weak to then 1/1.3 multiplier and if strong to then 1.3 otherwise base of 1
         for t1, t2 in type_combinations:
             if t2 in move_adv_df[t1].iloc[0]:  
                 multipliers.append(1/adv_multiplier)

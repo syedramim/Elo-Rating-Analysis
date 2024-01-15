@@ -24,4 +24,5 @@ def parse_json(url, isInfo):
 def main():
     print(parse_json('https://pokeapi.co/api/v2/pokemon/1/'))
     
-main()
+if __name__ == "__main__":
+    main()
