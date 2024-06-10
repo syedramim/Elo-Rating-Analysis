@@ -1,10 +1,10 @@
-# Pokemon Rating
+# ELO Rating
 
-This project aims to provide an accurate way to measure how "good" a Pokemon is. It uses the pokeapi.co API to get data and then processes it using Pandas. The project utilizes Numpy along with Scikit-Learn to assign "jobs" for Pokemon to create a better rating system. It also uses a chess algorithm to rate each Pokemon.
+This project aims to provide an accurate way to measure how "good" a Pokemon is. It uses the pokeapi.co API to get data and then processes it using Pandas. The project utilizes Numpy along with Scikit-Learn to assign "jobs" for Pokemon to create a better rating system. It also uses a chess algorithm to rank each Pokemon.
 
 ## Overview
 
-The project's goal is to predict which Pokemon are generally considered strong based on their stats, primary jobs, secondary jobs, and type advantages. The ELO rating system is used to achieve this.
+The project aims to predict which Pokemon are generally considered strong based on their stats, primary jobs, secondary jobs, and type advantages assigned using machine learning scikit-learn. The ELO rating system is used to achieve this.
 
 ## Features
 
@@ -38,6 +38,4 @@ The project's goal is to predict which Pokemon are generally considered strong b
 
 - Modify `simulate.py` to adjust multipliers and weights.
 - Create better simulation methods to mimic actual Pokemon battles.
-
-
 
