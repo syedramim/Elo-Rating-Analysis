@@ -1,41 +1,43 @@
-This project aims to provide an accurate way to measure how "good" a Pokemon is. It uses the pokeapi.co API to get the data and then clean it through pandas. The project utilizes Numpy along with scikit-learn to provide "jobs" for Pokemons to create a better rating for them. The project also utilizes the chess algorithm to rate every single Pokemon.
+# Pokemon Rating
 
-The Project, to a large extent, was quite accurate; of course, it wasn't perfect in predicting what is the best Pokemon, but in general, it predicts which Pokemon generally are considered to be very strong.
+This project aims to provide an accurate way to measure how "good" a Pokemon is. It uses the pokeapi.co API to get data and then processes it using Pandas. The project utilizes Numpy along with Scikit-Learn to assign "jobs" for Pokemon to create a better rating system. It also uses a chess algorithm to rate each Pokemon.
 
-It should be noted that the way this program handles the ELO is primarily through the Pokemon's stats, primary jobs, and secondary jobs, alongside their type advantages. It does not, however, consider movesets or abilities.
+## Overview
 
-To Run the Program:
+The project's goal is to predict which Pokemon are generally considered strong based on their stats, primary jobs, secondary jobs, and type advantages. The ELO rating system is used to achieve this.
 
-    -Simply Git Clone the Program into a coding space
-    -Go into pokemon_rating.ipynb and hit Run All, assuming you are in a Jupyter Notebooks space
-    -Once the program has run, you can scroll to the bottom and see that it will look exactly like my notebook
+## Features
 
-To Create Your Own More Optimized Elo:
+- **Data Extraction and Cleaning**: Uses the pokeapi.co API.
+- **Job Assignment**: Assigns jobs to Pokemon based on their stats.
+- **ELO Rating System**: Rates Pokemon using a modified ELO rating algorithm.
+- **Simulations**: Runs simulations to determine the best Pokemon.
 
-    -Go into simulate.py and chance the multipliers, giving more weight to what you consider to be more important, alongside what multiplier number you think best
-    -Another way to optimize would be to create a better way to simulate a round, similar to an actual Pokemon battle. This code just runs 1000 iterations and sees who is most likely to win and calculates the ELO based off that. 
+## Files
+
+- **poke_db.xlsx**: Contains parsed JSON data.
+- **ratings.xlsx**: Contains ELO ratings of the Pokemon.
+- **type_advantages.xlsx**: Information on type advantages.
+- **determine_job.py**: Determines the best-suited jobs for the Pokemon.
+- **generate_data.py**: Generates data for job prediction.
+- **handle_json.py**: Handles API data parsing.
+- **poke_jobs.py**: Enum for Pokemon jobs.
+- **simulate.py**: Main simulation and rating script.
+- **pokemon_rating.ipynb**: Main Jupyter Notebook for running the project.
+
+## Running the Project
+
+1. **Clone the Repository**:
+    ```bash
+    git clone https://github.com/syedramim/Pokemon-Rating.git
+    ```
+2. **Run the Jupyter Notebook**:
+    - Open `pokemon_rating.ipynb` and run all cells.
+
+## Optimizing ELO Ratings
+
+- Modify `simulate.py` to adjust multipliers and weights.
+- Create better simulation methods to mimic actual Pokemon battles.
 
 
-THE DESCRIPTION OF EACH FILE IS DOWN BELOW:
 
--poke_db.xlsx has the parsed JSON info
-
--ratings.xlsx contains all the elo ratings of the pokemons, the stats elo is based only on their stats, the primary job is off their primary job and the secondary job elo is off their secondary jobs and finally the ELO is calculated through this formula:
-
-    -ELO = STAT_ELO + 0.5(PRIMARY_JOB_ELO) + 0.5(SECONDARY_JOB_ELO/N) where N is the amount of secondary jobs
-
--type_advantages.xlsx has the info on type advantages
-
--determine_job.py determines the best-suited jobs for the Pokemon
-
--generate data utilizes numpy to quickly generate data to be utilized by scikit-learn to predict jobs for actual Pokemon
-
--handle_json.py is the test file to figure out how to handle the api and parse it
-
--poke_jobs.py is an enum to contain the poke jobs
-
--simulate.py is where the magic of ratings happens. This part is highly biased in the sense that I determined what stats are most important based on research
-
--pokemon_rating.ipynb is the main file. It utilizes all the methods to rate the pokemon
-
- 
