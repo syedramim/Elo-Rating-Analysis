@@ -29,7 +29,7 @@ The project aims to predict which Pokemon are generally considered strong based 
 
 1. **Clone the Repository**:
     ```bash
-    git clone https://github.com/syedramim/Pokemon-Rating.git
+   https://github.com/syedramim/Elo-Rating-Analysis.git
     ```
 2. **Run the Jupyter Notebook**:
     - Open `pokemon_rating.ipynb` and run all cells.
